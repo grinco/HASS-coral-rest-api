@@ -1,0 +1,9 @@
+{
+  "build_from": {
+    "aarch64": "homeassistant/aarch64-base-ubuntu",
+    "amd64": "homeassistant/amd64-base-ubuntu",
+    "armhf": "homeassistant/armhf-base-ubuntu",
+    "armv7": "homeassistant/armv7-base-ubuntu",
+    "i386": "homeassistant/i386-base-ubuntu"
+  }
+}

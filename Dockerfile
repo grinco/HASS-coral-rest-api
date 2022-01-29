@@ -1,4 +1,5 @@
-FROM ubuntu:20.04
+ARG BUILD_FROM=homeassistant/amd64-base-ubuntu
+FROM ${BUILD_FROM}
 
 RUN apt-get update && apt-get install -y gnupg curl
 RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
