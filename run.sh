@@ -7,7 +7,7 @@ rm -f /app/coral.log
 if bashio::config.true "ACCESS_LOG"; then
   touch /config/coral_access.log
   ln -s /config/coral_access.log /app/coral.log
-  echo "Logging to coral_access.log in your Home Assistant config directory"
+  echo "Logging to /config/coral_access.log"
 else
   ln -s /dev/null /app/coral.log
 fi
