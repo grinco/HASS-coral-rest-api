@@ -19,11 +19,11 @@
   "options": {
     "MODEL_URL": "https://raw.githubusercontent.com/google-coral/test_data/master/ssdlite_mobiledet_coco_qat_postprocess_edgetpu.tflite",
     "LABELS_URL": "https://raw.githubusercontent.com/google-coral/test_data/master/coco_labels.txt",
-    "access_log": true
+    "ACCESS_LOG": true
   },
   "schema": {
     "MODEL_URL": "str",
     "LABELS_URL": "str",
-    "access_log": "bool"
+    "ACCESS_LOG": "bool"
   }
 }

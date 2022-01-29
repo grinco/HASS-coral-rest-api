@@ -1,12 +1,13 @@
 #!/usr/bin/env bashio
 
-MODEL_URL=$(bashio::config "model_url")
-LABELS_URL=$(bashio::config "labels_url")
+MODEL_URL=$(bashio::config "MODEL_URL")
+LABELS_URL=$(bashio::config "LABELS_URL")
 
-if bashio::config.true "access_log"; then
-  ln -s /dev/stderr coral.log
+rm -f /app/coral.log
+if bashio::config.true "ACCESS_LOG"; then
+  ln -s /dev/stderr /app/coral.log
 else
-  ln -s /dev/null coral.log
+  ln -s /dev/null /app/coral.log
 fi
 
 
