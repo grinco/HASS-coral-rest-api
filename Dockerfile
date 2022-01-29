@@ -26,5 +26,5 @@ RUN chmod a+x /app/run.sh
 
 EXPOSE 5000
 
-CMD [ "/run.sh" ]
+CMD [ "/app/run.sh" ]
 

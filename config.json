@@ -1,6 +1,6 @@
 {
-  "name": "coral-rest-api",
-  "version": "0.0.1",
+  "name": "CORAL TPU Rest API",
+  "version": "0.0.2",
   "slug": "coral-api",
   "description": "CORAL REST API compatible with Deepstack addon",
   "url": "https://github.com/grinco/HASS-coral-rest-api",
@@ -10,6 +10,12 @@
   "map": ["config:rw"],
   "usb": true,
   "udev": true,
+  "ports": {
+    "5000/tcp": 5001
+  },
+  "ports_description": {
+    "5000/tcp": "API"
+  },
   "options": {
     "MODEL_URL": "https://raw.githubusercontent.com/google-coral/test_data/master/ssdlite_mobiledet_coco_qat_postprocess_edgetpu.tflite",
     "LABES_URL": "https://raw.githubusercontent.com/google-coral/test_data/master/coco_labels.txt",
