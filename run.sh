@@ -11,10 +11,12 @@ else
 fi
 
 
-mkdir /models
+mkdir /app/models
 
-wget ${MODEL_URL} -O /models/model.tflite
-wget ${LABELS_URL} -O /models/labels.txt
+wget ${MODEL_URL} -O /app/models/model.tflite
+wget ${LABELS_URL} -O /app/models/labels.txt
+
+cd /app
 
 echo "Starting the server..."
-exec python3 /app/coral-app.py --model  "model.tflite" --labels "labels.txt" --models_directory "/models"
+exec python3 /app/coral-app.py --model  "model.tflite" --labels "labels.txt" --models_directory "/app/models/"
