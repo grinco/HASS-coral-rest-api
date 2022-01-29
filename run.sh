@@ -3,22 +3,30 @@
 MODEL_URL=$(bashio::config "MODEL_URL")
 LABELS_URL=$(bashio::config "LABELS_URL")
 
+MODEL_FILE=`echo ${MODEL_URL} | sed 's:.*/::'`
+LABELS_FILE=`echo ${LABELS_file} | sed 's:.*/::'`
+
 rm -f /app/coral.log
 if bashio::config.true "ACCESS_LOG"; then
   touch /config/coral_access.log
   ln -s /config/coral_access.log /app/coral.log
   echo "Logging to /config/coral_access.log"
 else
+  echo "Logging to /dev/null"
   ln -s /dev/null /app/coral.log
 fi
 
 
 mkdir -p /app/models
 
-wget -q ${MODEL_URL} -O /app/models/model.tflite
-wget -q ${LABELS_URL} -O /app/models/labels.txt
+wget -q ${MODEL_URL} -O /app/models/${MODEL_FILE}
+wget -q ${LABELS_URL} -O /app/models/${LABELS_FILE}
 
 cd /app
 
+# Temporarily using my own code until https://github.com/robmarkcole/coral-pi-rest-server/issues/67 is resolved
+echo "Overwiritng coral-app.py with custom one pending merge upstream"
+wget -q https://raw.githubusercontent.com/grinco/coral-pi-rest-server/v1.0/coral-app.py -O /app/coral-app.py
+
 echo "Starting the server..."
-exec python3 /app/coral-app.py --model  "model.tflite" --labels "labels.txt" --models_directory "/app/models/"
+exec python3 /app/coral-app.py --model  "${MODEL_FILE}" --labels "${LABELS_FILE}" --models_directory "/app/models/"
