@@ -9,5 +9,5 @@ HASS addon implementing Google Coral TPU access through REST API, compatible wit
 
 # Credits
 
-Based on the work done by [robmarkcole](https://github.com/robmarkcole/coral-pi-rest-server/) and [runningman84] (https://github.com/runningman84/docker-coral-rest-server)
+Based on the work done by [robmarkcole](https://github.com/robmarkcole/coral-pi-rest-server/) and [runningman84](https://github.com/runningman84/docker-coral-rest-server)
 
