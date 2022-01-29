@@ -4,7 +4,7 @@ MODEL_URL=$(bashio::config "MODEL_URL")
 LABELS_URL=$(bashio::config "LABELS_URL")
 
 MODEL_FILE=`echo ${MODEL_URL} | sed 's:.*/::'`
-LABELS_FILE=`echo ${LABELS_FILE} | sed 's:.*/::'`
+LABELS_FILE=`echo ${LABELS_URL} | sed 's:.*/::'`
 
 rm -f /app/coral.log
 if bashio::config.true "ACCESS_LOG"; then
