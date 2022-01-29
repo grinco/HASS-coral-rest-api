@@ -1,6 +1,6 @@
 {
   "name": "CORAL TPU Rest API",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "slug": "coral-api",
   "description": "CORAL REST API compatible with Deepstack addon",
   "url": "https://github.com/grinco/HASS-coral-rest-api",
@@ -9,6 +9,7 @@
   "boot": "auto",
   "map": ["config:rw"],
   "usb": true,
+  "devices": ["/dev/apex_0"], 
   "udev": true,
   "ports": {
     "5000/tcp": 5001
