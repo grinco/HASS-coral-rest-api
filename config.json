@@ -20,7 +20,7 @@
   "options": {
     "MODEL_URL": "https://raw.githubusercontent.com/google-coral/test_data/master/ssdlite_mobiledet_coco_qat_postprocess_edgetpu.tflite",
     "LABELS_URL": "https://raw.githubusercontent.com/grinco/HASS-coral-rest-api/main/models/coco_labels.txt",
-    "ACCESS_LOG": true
+    "ACCESS_LOG": false 
   },
   "schema": {
     "MODEL_URL": "str",

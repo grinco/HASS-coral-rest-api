@@ -1,5 +1,5 @@
 {
-  "name": "Hassio Addon: CORAL Rest API",
+  "name": "Hass.io Addon: CORAL TPU Rest API",
   "url": "https://github.com/grinco/HASS-coral-rest-api",
   "maintainer": "Vadim Grinco"
 }

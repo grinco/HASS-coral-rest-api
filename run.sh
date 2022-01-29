@@ -5,7 +5,9 @@ LABELS_URL=$(bashio::config "LABELS_URL")
 
 rm -f /app/coral.log
 if bashio::config.true "ACCESS_LOG"; then
-  ln -s /dev/stderr /app/coral.log
+  touch /config/coral_access.log
+  ln -s /config/coral_access.log /app/coral.log
+  echo "Logging to coral_access.log in your Home Assistant config directory"
 else
   ln -s /dev/null /app/coral.log
 fi
