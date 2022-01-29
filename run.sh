@@ -24,9 +24,5 @@ wget -q ${LABELS_URL} -O /app/models/${LABELS_FILE}
 
 cd /app
 
-# Temporarily using my own code until https://github.com/robmarkcole/coral-pi-rest-server/issues/67 is resolved
-echo "Overwiritng coral-app.py with custom one pending merge upstream"
-wget -q https://raw.githubusercontent.com/grinco/coral-pi-rest-server/v1.0/coral-app.py -O /app/coral-app.py
-
 echo "Starting the server..."
 exec python3 /app/coral-app.py --model  "${MODEL_FILE}" --labels "${LABELS_FILE}" --models_directory "/app/models/"
