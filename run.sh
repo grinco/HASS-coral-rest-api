@@ -10,8 +10,7 @@ else
 fi
 
 
-mkdir /models && \
-chdir /models
+mkdir /models
 
 wget ${MODEL_URL} -O /models/model.tflite
 wget ${LABELS_URL} -O /models/labels.txt
