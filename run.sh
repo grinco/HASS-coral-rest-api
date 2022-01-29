@@ -13,10 +13,10 @@ else
 fi
 
 
-mkdir /app/models
+mkdir -p /app/models
 
-wget ${MODEL_URL} -O /app/models/model.tflite
-wget ${LABELS_URL} -O /app/models/labels.txt
+wget -q ${MODEL_URL} -O /app/models/model.tflite
+wget -q ${LABELS_URL} -O /app/models/labels.txt
 
 cd /app
 
