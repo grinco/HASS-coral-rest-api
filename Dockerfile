@@ -1,13 +1,15 @@
-ARG BUILD_FROM=homeassistant/amd64-base-ubuntu:20.04
+ARG BUILD_FROM="homeassistant/amd64-base-ubuntu:18.04"
 FROM ${BUILD_FROM}
 
-RUN apt-get update && apt-get install -y gnupg curl
+WORKDIR /tmp
+
+RUN apt-get update && apt-get install -y gnupg
 RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 
 RUN echo "deb https://packages.cloud.google.com/apt coral-edgetpu-stable main" | tee /etc/apt/sources.list.d/coral-edgetpu.list
 RUN echo "deb https://packages.cloud.google.com/apt coral-cloud-stable main" | tee /etc/apt/sources.list.d/coral-cloud.list
 
-RUN apt-get update && apt-get install -y python3 wget curl unzip python3-pip
+RUN apt-get update && apt-get install -y python3 wget unzip python3-pip
 RUN apt-get -y install python3-edgetpu libedgetpu1-legacy-std
 
 # install the APP
