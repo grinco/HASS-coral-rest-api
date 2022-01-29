@@ -1,6 +1,6 @@
 {
   "name": "CORAL TPU Rest API",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "slug": "coral-api",
   "description": "CORAL REST API compatible with Deepstack addon",
   "url": "https://github.com/grinco/HASS-coral-rest-api",
