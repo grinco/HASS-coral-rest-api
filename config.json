@@ -1,6 +1,6 @@
 {
   "name": "CORAL TPU Rest API",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "slug": "coral-api",
   "description": "CORAL REST API compatible with Deepstack addon",
   "url": "https://github.com/grinco/HASS-coral-rest-api",
@@ -13,7 +13,7 @@
   "udev": true,
   "init": false,
   "ports": {
-    "5000/tcp": 5001
+    "5000/tcp": 5000
   },
   "ports_description": {
     "5000/tcp": "API"

@@ -1,4 +1,4 @@
-#!/usr/bin/env bashio
+#!/usr/bin/with-contenv bashio
 
 MODEL_URL=$(bashio::config "MODEL_URL")
 LABELS_URL=$(bashio::config "LABELS_URL")
