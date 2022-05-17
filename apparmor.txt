@@ -1,6 +1,6 @@
 #include <tunables/global>
 
-profile coral-api flags=(attach_disconnected,mediate_deleted) {
+profile coral-api flags=(complain,attach_disconnected,mediate_deleted) {
   #include <abstractions/base>
 
   # Capabilities
