@@ -11,6 +11,7 @@
   "usb": true,
   "devices": ["/dev/apex_0"], 
   "udev": true,
+  "init": false,
   "ports": {
     "5000/tcp": 5001
   },
