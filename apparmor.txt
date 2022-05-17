@@ -5,6 +5,7 @@ profile coral-api flags=(attach_disconnected,mediate_deleted) {
 
   # Capabilities
   file,
+  network,
   signal (send) set=(kill,term,int,hup,cont),
 
   # S6-Overlay
