@@ -1,5 +1,4 @@
 #!/usr/bin/env bashio
-set -x 
 
 MODEL_URL=$(bashio::config "MODEL_URL")
 LABELS_URL=$(bashio::config "LABELS_URL")
@@ -24,8 +23,6 @@ wget -q ${MODEL_URL} -O /app/models/${MODEL_FILE}
 wget -q ${LABELS_URL} -O /app/models/${LABELS_FILE}
 
 cd /app
-
-set +x
 
 echo "Starting the server..."
 exec python3 /app/coral-app.py --model  "${MODEL_FILE}" --labels "${LABELS_FILE}" --models_directory "/app/models/"
