@@ -1,6 +1,6 @@
 #include <tunables/global>
 
-profile HASS-coral-rest-api flags=(attach_disconnected,mediate_deleted) {
+profile coral-api flags=(attach_disconnected,mediate_deleted) {
   #include <abstractions/base>
 
   # Capabilities
@@ -20,7 +20,7 @@ profile HASS-coral-rest-api flags=(attach_disconnected,mediate_deleted) {
   /run/{,**} rwk,
   /dev/tty rw,
   /dev/apex_0 rw,
-  /dev/null,
+  /dev/null rw,
 
   # Bashio
   /usr/lib/bashio/** ix,
