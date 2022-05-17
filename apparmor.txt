@@ -20,11 +20,16 @@ profile HASS-coral-rest-api flags=(attach_disconnected,mediate_deleted) {
   /run/{,**} rwk,
   /dev/tty rw,
   /dev/apex_0 rw,
+  /dev/null,
 
   # Bashio
   /usr/lib/bashio/** ix,
   /tmp/** rwk,
 
-  # Access to options.json and other files within your addon
+  # Access to options.json and other files within addon
   /data/** rw,
+
+  # Access to configs and app directories
+  /config/** rw,
+  /app/** rw,
 }
