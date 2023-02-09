@@ -10,7 +10,7 @@ RUN echo "deb https://packages.cloud.google.com/apt coral-edgetpu-stable main" |
 RUN echo "deb https://packages.cloud.google.com/apt coral-cloud-stable main" | tee /etc/apt/sources.list.d/coral-cloud.list
 
 RUN apt-get update && apt-get install -y python3 wget unzip python3-pip
-RUN apt-get -y install python3-edgetpu libedgetpu1-legacy-std
+RUN apt-get -y install python3-pycoral
 
 # install the APP
 ENV APP_VERSION="2.2"
