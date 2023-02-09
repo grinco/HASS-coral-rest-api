@@ -13,19 +13,20 @@ RUN apt-get update && apt-get install -y python3 wget unzip python3-pip
 RUN apt-get -y install python3-edgetpu libedgetpu1-legacy-std
 
 # install the APP
+ENV APP_VERSION="2.2"
 RUN cd /tmp && \
-    wget "https://github.com/robmarkcole/coral-pi-rest-server/archive/refs/tags/v1.0.zip" -O /tmp/server.zip && \
+    wget "https://github.com/robmarkcole/coral-pi-rest-server/archive/refs/tags/${APP_VERSION}.zip" -O /tmp/server.zip && \
     unzip /tmp/server.zip && \
     rm -f /tmp/server.zip && \
-    mv coral-pi-rest-server-1.0 /app
+    mv coral-pi-rest-server-${APP_VERSION} /app
 
 
 
 WORKDIR /app
 RUN  pip3 install --no-cache-dir -r requirements.txt 
 
-# Temporarily using my own code until https://github.com/robmarkcole/coral-pi-rest-server/issues/67 is resolved
-RUN wget https://raw.githubusercontent.com/grinco/coral-pi-rest-server/v1.0/coral-app.py -O /app/coral-app.py
+# mitigate https://github.com/robmarkcole/coral-pi-rest-server/issues/66
+RUN sed -i -e 's/port=args.port)/port=args.port, use_reloader=False)\n/' /app/coral-app.py
 
 COPY run.sh /app
 RUN chmod a+x /app/run.sh
